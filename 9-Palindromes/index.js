@@ -13,6 +13,17 @@ Example output: true
 */
 
 function isPalindrome(str) {
+    // reverse the word using a backwards for loop to create a new string
+    let reverseStr = ""
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        reverseStr += str[i]
+    }
+
+    return reverseStr === str
+    // compare the new string tothe original word - are they equal
+    // yes - return true
+    // no - return false
 
 }
 
