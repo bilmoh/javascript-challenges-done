@@ -16,7 +16,48 @@ Expected output:
 
 */
 
+// Methods 1 - 
+// function getUniqueTags(data) {
+//     // use map to loop through the data and get a new array of tags 
+//     const tags = data.map(shows => shows.tags).flat()
+
+//     // flatten the tags array with .flat()
+//     // creare a new array uniqueTags to hold the unique values 
+//     const uniqueTags = []
+
+//     // loop through the tags array
+//     tags.forEach(tag => {
+//         // is the element already in that uniqueTags arr
+//         if (!uniqueTags.includes(tag)) {
+//             // no: push into arr
+//             uniqueTags.push(tag)
+//         }
+//         // yes: keep going
+//     })
+
+//     //return uniqueTags arr
+//     return uniqueTags
+// }
+
+//method 2
 function getUniqueTags(data) {
+    const tags = data.map(genre => genre.tags).flat()
+    const uniqueTags = {}
+
+    // filter tags arr
+    return tags.filter(tag => {
+        // look up the tags in the uniqueTags obj
+        if (!uniqueTags[tag]) {
+            uniqueTags[tag] = true
+            // if it's not then we have a unique item
+            // put the item in our object with a value of true
+            return true
+        }
+        return false
+    })
+
+
+
 
 }
 
