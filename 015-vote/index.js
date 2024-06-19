@@ -20,7 +20,27 @@ const gameNightFood = {
 }
 
 function findTheWinner(obj) {
+    // initialise some new variables 
+    // keep track of the current highest vote number 
+    let highestVotes = 0
+    // keep track of the current winning item
+    let winningItem = ""
 
+    //for each food option in the food object 
+    for (let food in obj) {
+        //is the current value higher than the value of highestVotes
+        if (obj[food] > highestVotes) {
+            // yes: the new value of highestVotes in the current value 
+            highestVotes = obj[food]
+            // winningItem = current property
+            winningItem = food
+        }
+        console.log(highestVotes, winningItem)
+    }
+
+
+    //return string announcing the inner using winnerItem and highestVotes variables
+    return `The winner is ${winningItem} with ${highestVotes} votes.`
 }
 
-console.log(findTheWinner(gameNightFood));
+console.log(findTheWinner(gameNightFood))
